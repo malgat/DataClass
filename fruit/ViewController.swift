@@ -17,10 +17,13 @@ class ViewController: UIViewController, XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let strURL = "http://api.androidhive.info/pizza/?format=xml"
+        let pizzaURL = NSURL(string: strURL)
+        
         //optional binding 처리
-        let path = Bundle.main.url(forResource: "fruit", withExtension: "xml")
-        if path != nil {
-            let myParser = XMLParser(contentsOf: path!)
+        
+        if pizzaURL != nil {
+            let myParser = XMLParser(contentsOf: pizzaURL! as URL)
             if myParser != nil {
                 //XMLParserDelegate와 UIViewController 연결
                 myParser?.delegate = self
