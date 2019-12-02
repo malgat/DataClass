@@ -17,6 +17,7 @@ class ViewController: UIViewController, XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //let path = Bundle.main.url(forResource: "fruit", withExtension: "xml")
         let strURL = "http://api.androidhive.info/pizza/?format=xml"
         let pizzaURL = NSURL(string: strURL)
         
